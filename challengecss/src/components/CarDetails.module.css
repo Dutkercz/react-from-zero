@@ -1,0 +1,36 @@
+.cd_main_div{
+    height: 700px;
+    background-color: rgba(255, 68, 0, 0.884);
+    border: solid orangered;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cd_h2{
+    margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+    color: rgb(3, 46, 3);
+}
+
+.cd_list{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 10px;
+    justify-items: center;}
+
+.div_item{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    border: solid orangered;
+    border-radius: 5px;
+    background-color: rgb(255, 153, 102);
+    width: 150px;
+    text-align: center;
+    color: rgb(3, 46, 3);
+    font-weight:bolder;
+}   
