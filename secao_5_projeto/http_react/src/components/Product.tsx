@@ -3,3 +3,5 @@ export interface Product {
     name:string,
     price:number
   }
+
+export type ProductInput = Omit<Product, 'id'>;

@@ -1,29 +1,44 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Camiseta Básica",
-      "price": 49.90
+      "price": 49.9
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Calça Jeans",
-      "price": 129.90
+      "price": 129.9
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Tênis Esportivo",
       "price": 299.99
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Jaqueta",
-      "price": 199.50
+      "price": 199.5
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Boné",
-      "price": 39.90
+      "price": 39.9
+    },
+    {
+      "id": "ce41",
+      "name": "Camiseta Preta s/ estampa",
+      "price": 49.9
+    },
+    {
+      "id": "0b08",
+      "name": "Regata Femina",
+      "price": 49.9
+    },
+    {
+      "id": "def9",
+      "name": "Jaqueta Bomber",
+      "price": 109.9
     }
   ]
 }
