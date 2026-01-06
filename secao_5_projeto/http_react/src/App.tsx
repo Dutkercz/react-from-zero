@@ -1,7 +1,6 @@
 import "./App.css";
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { type Product, type ProductInput } from "./components/Product";
-import {useFetch} from "./hooks/useFetch";
 
 function App() {
   const BASE_URL = "http://localhost:3000/products";
@@ -10,30 +9,40 @@ function App() {
 
   const [name, setName] = useState<string>("");
   const [price, setPrice] = useState<string>("");
+  const [loading, setLoading] = useState(false);
 
-  // aula 1 resgatando dados
+  //aula 1 resgatando dados
 
-  // useEffect(() => {
-  //   //use effect não aceita um async, então criamos uma outra função async dentro do effect,
-  //   // e fazemos uma chamada dessa função dentro do effect
+  useEffect(() => {
+    //use effect não aceita um async, então criamos uma outra função async dentro do effect,
+    // e fazemos uma chamada dessa função dentro do effect
 
-  //   const fechtProducts = async () => {
-  //     //criando a função assincrona
-  //     const res = await fetch(BASE_URL);
+    const fechtProducts = async () => {
+      setLoading(true);
+      //criando a função assincrona
+      const res = await fetch(BASE_URL);
 
-  //     const data: Product[] = await res.json();
+      const data: Product[] = await res.json();
 
-  //     setProducts(data);
-  //   };
-  //   fechtProducts(); //chamando a função criada dentro do useEffect
-  // }, []);
+      setProducts(data);
+      setLoading(false);
+    };
+    fechtProducts(); //chamando a função criada dentro do useEffect
+  }, []);
 
-  const {data : items} = useFetch<Product[]>(BASE_URL);
-  
   // 2 - add de produtos
+
+  const handleName = (e : any) => {
+    setName(e.target.value)
+  }
+
+  const handlePassword = (e : any) => {
+    setPrice(e.target.value)
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
 
     const newProduct: ProductInput = { name, price: +price };
 
@@ -50,20 +59,24 @@ function App() {
     setProducts((prev) => [...prev, addedProduct]);
     setName("");
     setPrice("");
+    setLoading(false);
   };
 
   return (
     <>
       <div className="App">
         <h1>Lista de Produtos</h1>
-        <ul>
-          {items && items.map((x) => (
+        {/* loading */}
+        {loading && <p style={{"background":"red"}}>Carregando dados</p>}
+        {!loading && (
+          <ul>
+          {products.map((x) => (
             <p key={x.id}>
               {x.name} - R$ {x.price}
             </p>
           ))}
         </ul>
-
+        )}
         <div className="add-product">
           <form onSubmit={handleSubmit}>
             <label>
@@ -73,7 +86,7 @@ function App() {
                 name="name"
                 placeholder="Nome do produto"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleName}
               />
             </label>
             <label>
@@ -83,10 +96,10 @@ function App() {
                 name="price"
                 placeholder="Valor do produto"
                 value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                onChange={handlePassword}
               />
             </label>
-            <input type="submit" value="criar-produto" />
+            {!loading && <input type="submit" value="criar-produto" />}
           </form>
         </div>
       </div>

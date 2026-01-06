@@ -39,6 +39,36 @@
       "id": "def9",
       "name": "Jaqueta Bomber",
       "price": 109.9
+    },
+    {
+      "id": "1a4f",
+      "name": "Moleton",
+      "price": 99.9
+    },
+    {
+      "id": "3b65",
+      "name": "Toalha",
+      "price": 39.9
+    },
+    {
+      "id": "ee7d",
+      "name": "Tenis",
+      "price": 159.9
+    },
+    {
+      "id": "2b4a",
+      "name": "Chinelo",
+      "price": 39.9
+    },
+    {
+      "id": "0ac9",
+      "name": "sandalia",
+      "price": 79.9
+    },
+    {
+      "id": "446d",
+      "name": "dasdas",
+      "price": 111
     }
   ]
 }
