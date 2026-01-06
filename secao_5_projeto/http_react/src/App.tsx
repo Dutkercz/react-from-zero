@@ -10,36 +10,61 @@ function App() {
   const [name, setName] = useState<string>("");
   const [price, setPrice] = useState<string>("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<any>(null);
 
   //aula 1 resgatando dados
-
   useEffect(() => {
     //use effect não aceita um async, então criamos uma outra função async dentro do effect,
     // e fazemos uma chamada dessa função dentro do effect
-
     const fechtProducts = async () => {
       setLoading(true);
-      //criando a função assincrona
-      const res = await fetch(BASE_URL);
+      try {
+        //criando a função assincrona
+        const res = await fetch(BASE_URL);
 
-      const data: Product[] = await res.json();
+        const data: Product[] = await res.json();
 
-      setProducts(data);
+        setProducts(data);
+
+      } catch (error: any) {
+        setError("Alguma coisa deu errado!");
+      }
+
       setLoading(false);
     };
     fechtProducts(); //chamando a função criada dentro do useEffect
   }, []);
 
+  //handler de delete
+  const handleDelete = async (id : number) => {
+    setLoading(true);
+    try{
+      const res = await fetch(`${BASE_URL}/${id}`, {
+      method: "DELETE",
+    }); 
+      if(!res.ok){
+        throw new Error(`"Erro ao deletar: " ${res.status}`)
+      }
+
+      setProducts((prev) => prev.filter((x) => x.id !== id));
+    }catch(error){
+      console.error("Falha na requisição:", error);
+      alert("Não foi possível deletar o produto.");
+    }finally{
+      setLoading(false);
+    }
+  }
+
+  //handlers de inputs
+  const handleName = (e: any) => {
+    setName(e.target.value);
+  };
+
+  const handlePassword = (e: any) => {
+    setPrice(e.target.value);
+  };
+  
   // 2 - add de produtos
-
-  const handleName = (e : any) => {
-    setName(e.target.value)
-  }
-
-  const handlePassword = (e : any) => {
-    setPrice(e.target.value)
-  }
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -67,15 +92,20 @@ function App() {
       <div className="App">
         <h1>Lista de Produtos</h1>
         {/* loading */}
-        {loading && <p style={{"background":"red"}}>Carregando dados</p>}
+        {loading && <p style={{ background: "red" }}>Carregando dados</p>}
+        {error && <p style={{ background: "red" }}>{error}</p>}
         {!loading && (
           <ul>
-          {products.map((x) => (
-            <p key={x.id}>
-              {x.name} - R$ {x.price}
-            </p>
-          ))}
-        </ul>
+            {products.map((x) => (
+              <p key={x.id}>
+                {x.name} - R$ {x.price}
+                <button 
+                style={{padding:"5px", marginLeft:"6px", background:"red", color:"white"}}
+                onClick={() => handleDelete(x.id)}>
+                  Remover</button>
+              </p> 
+            ))}
+          </ul>
         )}
         <div className="add-product">
           <form onSubmit={handleSubmit}>
