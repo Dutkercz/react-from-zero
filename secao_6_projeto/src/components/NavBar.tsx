@@ -4,6 +4,9 @@ import "./NavBar.css"
 const NavBar = () => {
   return (
     <nav>
+      {/* Aqui são responsaveis por mudar a URL. Ou seja, ao clicar em alguns do
+      botoes abaixo, minha URL ira mudar. Consequentemente nosso Route no App.tsx irá captar
+      a mudança e ira renderizar a respectiva Page */}
         <Link to="/">Home</Link>
         <Link to="/about">Sobre</Link>
         <Link to="/products">Produtos</Link>

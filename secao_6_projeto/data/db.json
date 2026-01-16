@@ -3,52 +3,92 @@
     {
       "id": "1",
       "name": "Camiseta Básica",
-      "price": 49.9
+      "price": 49.9,
+      "hasDiscount": false
     },
     {
       "id": "2",
       "name": "Calça Jeans",
-      "price": 129.9
+      "price": 129.9,
+      "hasDiscount": true
     },
     {
       "id": "3",
       "name": "Tênis Esportivo",
-      "price": 299.99
+      "price": 299.99,
+      "hasDiscount": false
     },
     {
       "id": "4",
       "name": "Jaqueta",
-      "price": 199.5
+      "price": 199.5,
+      "hasDiscount": true
     },
     {
       "id": "5",
       "name": "Boné",
-      "price": 39.9
+      "price": 39.9,
+      "hasDiscount": false
     },
     {
       "id": "ce41",
       "name": "Camiseta Preta s/ estampa",
-      "price": 49.9
+      "price": 49.9,
+      "hasDiscount": false
     },
     {
       "id": "0b08",
-      "name": "Regata Femina",
-      "price": 49.9
+      "name": "Regata Feminina",
+      "price": 49.9,
+      "hasDiscount": true
     },
     {
       "id": "def9",
       "name": "Jaqueta Bomber",
-      "price": 109.9
+      "price": 109.9,
+      "hasDiscount": false
     },
     {
       "id": "1a4f",
       "name": "Moleton",
-      "price": 99.9
+      "price": 99.9,
+      "hasDiscount": true
     },
     {
       "id": "ee7d",
-      "name": "Tenis",
-      "price": 159.9
+      "name": "Tênis Casual",
+      "price": 159.9,
+      "hasDiscount": false
+    },
+    {
+      "id": "f2a1",
+      "name": "Bermuda de Sarja",
+      "price": 79.9,
+      "hasDiscount": true
+    },
+    {
+      "id": "c9b3",
+      "name": "Vestido Floral",
+      "price": 149.9,
+      "hasDiscount": false
+    },
+    {
+      "id": "d4e5",
+      "name": "Camisa Polo",
+      "price": 89.9,
+      "hasDiscount": true
+    },
+    {
+      "id": "a1b2",
+      "name": "Kit 3 Pares de Meias",
+      "price": 29.9,
+      "hasDiscount": false
+    },
+    {
+      "id": "b7c8",
+      "name": "Saia Plissada",
+      "price": 69.9,
+      "hasDiscount": true
     }
   ]
 }

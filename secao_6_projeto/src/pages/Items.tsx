@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import type { Item } from "../components/Item";
 import "./Items.css"; 
+import { Link } from "react-router-dom";
 
 const Items = () => {
   const BASE_URL = "http://localhost:3000/products";
 
   const [items, setItems] = useState<Item[]>([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<any>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +18,7 @@ const Items = () => {
         const data = await res.json();
         setItems(data);
       } catch (error) {
-        console.error("Erro ao buscar items:", error);
+        setError(error);
       }
       finally {
         setLoading(false);
@@ -28,6 +30,7 @@ const Items = () => {
   return (
     <div className="items-container">
       <h2 className="items-title">Lista de Items</h2>
+      {error && <p>Erro ao carregar produto</p>}
 
       {loading ? 
         <div className="loader-container">
@@ -39,10 +42,13 @@ const Items = () => {
           {items &&
             items.map((x, i) => (
               <div key={i} className="item-card">
-                <span className="item-name">{x.name}</span>
+                <h3 className="item-name">{x.name}</h3>
                 <span className="item-price">R$ {x.price}</span>
+                <Link style={{padding:"4px", color:"white" }} to={`/products/${i}`}>Detalhes</Link>
               </div>
+
             ))}
+            
         </div>
       }
     </div>
