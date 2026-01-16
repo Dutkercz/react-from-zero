@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import Items from "./pages/Items";
 import ItemDetail from "./pages/ItemDetail";
 import Info from "./pages/Info";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/products" element={<Items />} />
           <Route path="/products/:id" element={<ItemDetail />} />
           <Route path="/products/:id/info" element={<Info />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
     </>

@@ -4,91 +4,181 @@
       "id": "1",
       "name": "Camiseta Básica",
       "price": 49.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Algodão 100%" },
+        { "label": "Cor", "value": "Branca" },
+        { "label": "Gênero", "value": "Unissex" },
+        { "label": "Modelagem", "value": "Regular" }
+      ]
     },
     {
       "id": "2",
       "name": "Calça Jeans",
       "price": 129.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Jeans" },
+        { "label": "Cor", "value": "Azul escuro" },
+        { "label": "Cintura", "value": "Média" },
+        { "label": "Modelagem", "value": "Slim" }
+      ]
     },
     {
       "id": "3",
       "name": "Tênis Esportivo",
       "price": 299.99,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Tecido sintético" },
+        { "label": "Cor", "value": "Preto com detalhes" },
+        { "label": "Indicação", "value": "Corrida e treino" },
+        { "label": "Solado", "value": "Borracha antiderrapante" }
+      ]
     },
     {
       "id": "4",
       "name": "Jaqueta",
       "price": 199.5,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Poliéster" },
+        { "label": "Cor", "value": "Cinza" },
+        { "label": "Forro", "value": "Acolchoado" },
+        { "label": "Fechamento", "value": "Zíper" }
+      ]
     },
     {
       "id": "5",
       "name": "Boné",
       "price": 39.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Algodão" },
+        { "label": "Cor", "value": "Preto" },
+        { "label": "Ajuste", "value": "Regulável" },
+        { "label": "Estilo", "value": "Casual" }
+      ]
     },
     {
       "id": "ce41",
       "name": "Camiseta Preta s/ estampa",
       "price": 49.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Algodão 100%" },
+        { "label": "Cor", "value": "Preta" },
+        { "label": "Gola", "value": "Redonda" },
+        { "label": "Estampa", "value": "Lisa" }
+      ]
     },
     {
       "id": "0b08",
       "name": "Regata Feminina",
       "price": 49.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Viscose" },
+        { "label": "Cor", "value": "Rosa" },
+        { "label": "Gênero", "value": "Feminino" },
+        { "label": "Caimento", "value": "Solto" }
+      ]
     },
     {
       "id": "def9",
       "name": "Jaqueta Bomber",
       "price": 109.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Nylon" },
+        { "label": "Cor", "value": "Verde militar" },
+        { "label": "Estilo", "value": "Bomber" },
+        { "label": "Punhos", "value": "Elástico" }
+      ]
     },
     {
       "id": "1a4f",
       "name": "Moleton",
       "price": 99.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Algodão com poliéster" },
+        { "label": "Cor", "value": "Cinza mescla" },
+        { "label": "Capuz", "value": "Sim" },
+        { "label": "Bolso", "value": "Canguru" }
+      ]
     },
     {
       "id": "ee7d",
       "name": "Tênis Casual",
       "price": 159.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Couro sintético" },
+        { "label": "Cor", "value": "Branco" },
+        { "label": "Estilo", "value": "Casual" },
+        { "label": "Fechamento", "value": "Cadarço" }
+      ]
     },
     {
       "id": "f2a1",
       "name": "Bermuda de Sarja",
       "price": 79.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Sarja" },
+        { "label": "Cor", "value": "Bege" },
+        { "label": "Comprimento", "value": "Até o joelho" },
+        { "label": "Bolsos", "value": "Laterais e traseiros" }
+      ]
     },
     {
       "id": "c9b3",
       "name": "Vestido Floral",
       "price": 149.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Poliéster" },
+        { "label": "Cor", "value": "Estampado floral" },
+        { "label": "Comprimento", "value": "Midi" },
+        { "label": "Manga", "value": "Curta" }
+      ]
     },
     {
       "id": "d4e5",
       "name": "Camisa Polo",
       "price": 89.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Algodão piquet" },
+        { "label": "Cor", "value": "Azul marinho" },
+        { "label": "Gola", "value": "Polo com botões" },
+        { "label": "Estilo", "value": "Casual social" }
+      ]
     },
     {
       "id": "a1b2",
       "name": "Kit 3 Pares de Meias",
       "price": 29.9,
-      "hasDiscount": false
+      "hasDiscount": false,
+      "info": [
+        { "label": "Material", "value": "Algodão com elastano" },
+        { "label": "Cor", "value": "Sortidas" },
+        { "label": "Quantidade", "value": "3 pares" },
+        { "label": "Tamanho", "value": "Único" }
+      ]
     },
     {
       "id": "b7c8",
       "name": "Saia Plissada",
       "price": 69.9,
-      "hasDiscount": true
+      "hasDiscount": true,
+      "info": [
+        { "label": "Material", "value": "Poliéster" },
+        { "label": "Cor", "value": "Preta" },
+        { "label": "Comprimento", "value": "Curto" },
+        { "label": "Cintura", "value": "Alta" }
+      ]
     }
   ]
 }

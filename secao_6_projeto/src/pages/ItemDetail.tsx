@@ -24,7 +24,7 @@ const ItemDetail = () => {
       }
     };
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <>
