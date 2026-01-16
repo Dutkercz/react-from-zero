@@ -1,7 +1,7 @@
 import "./App.css";
 
 //react router
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 //pages
 import Home from "./pages/Home";
@@ -11,6 +11,8 @@ import Items from "./pages/Items";
 import ItemDetail from "./pages/ItemDetail";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
+import SearchForm from "./components/SearchForm";
+import { Search } from "./pages/Search";
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
       <BrowserRouter>
         <NavBar />
         {/* os comp. que estiverem aqui estarãoa sempre sempre presentes na pagina (menus, etc) */}
+
+        {/* Adicionando Parametro de busca */}
+        <SearchForm />
         <Routes>
           {/* esse comp mudam o objetivo/conteudo da página (home, details, form, etc) 
           o Route fica 'observando' a URL do navegador, quando a URL bater com algum dos Route abaixo
@@ -28,6 +33,10 @@ function App() {
           <Route path="/products" element={<Items />} />
           <Route path="/products/:id" element={<ItemDetail />} />
           <Route path="/products/:id/info" element={<Info />} />
+          <Route path="/search" element={<Search />} />
+          {/* simulando uma rota antiga que foi modificada, nesse caso company, virou about e 
+          ao entrar nesse path, devemos ser redirecionados para /about */}
+          <Route path="/company" element={<Navigate to="/about"/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>

@@ -40,11 +40,11 @@ const Items = () => {
        : 
         <div className="items-grid">
           {items &&
-            items.map((x, i) => (
-              <div key={i} className="item-card">
+            items.map((x) => (
+              <div key={x.id} className="item-card">
                 <h3 className="item-name">{x.name}</h3>
                 <span className="item-price">R$ {x.price}</span>
-                <Link style={{padding:"4px", color:"white" }} to={`/products/${i}`}>Detalhes</Link>
+                <Link style={{padding:"4px", color:"white" }} to={`/products/${x.id}`}>Detalhes</Link>
               </div>
 
             ))}
