@@ -17,7 +17,7 @@ import { Search } from "./pages/Search";
 function App() {
   return (
     <>
-      <h1 style={{ color: "white", background: "blue" }}>Reacter Router</h1>
+      <h1 style={{ color: "white", background: "blue" }}>Cris Store </h1>
       <BrowserRouter>
         <NavBar />
         {/* os comp. que estiverem aqui estarãoa sempre sempre presentes na pagina (menus, etc) */}
