@@ -2,28 +2,32 @@ import { useEffect, useState } from "react";
 import "./Home.css";
 import type { Item } from "../components/Item";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/UseFetch";
 
 const Home = () => {
   const BASE_URL = "http://localhost:3000/products";
-  const [products, setProducts] = useState<Item[]>([]);
-  const [error, setError] = useState<any>();
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [products, setProducts] = useState<Item[]>([]);
+  // const [error, setError] = useState<any>();
+  // const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(BASE_URL);
-        const data = await res.json();
-        setProducts(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  },[])
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const res = await fetch(BASE_URL);
+  //       const data = await res.json();
+  //       setProducts(data);
+  //     } catch (error) {
+  //       setError(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // },[])
+
+
+  const {error, loading, product} = useFetch(BASE_URL);
 
   return (
   <div className="items-container">
@@ -39,8 +43,8 @@ const Home = () => {
       </div>
     ) : (
       <div className="items-grid">
-        {products &&
-          products
+        {product && Array.isArray(product) &&
+          product
             .filter(x => x.hasDiscount)
             .map((x, i) => (
               <div key={i} className="item-card">

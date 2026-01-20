@@ -1,4 +1,4 @@
-import { createContext, useState, type Dispatch, type SetStateAction } from "react";
+import React, { createContext, useState, type Dispatch, type SetStateAction } from "react";
 
 interface CounterContextType {
   counter: number;
@@ -9,11 +9,11 @@ export const CounterContext = createContext<CounterContextType | null>(null);
 
 
 // criar provider
-export const CounterContextProvider = ({ children } : any) => {
+export const CounterContextProvider = ({ children } : {children : React.ReactNode}) => {
   const [counter, setCounter] = useState<number>(5);
 
   return (
-    <CounterContext.Provider value ={{ counter, setCounter }}>
+    <CounterContext.Provider value={{ counter, setCounter }}>
       {children}
     </CounterContext.Provider>
   );

@@ -2,29 +2,16 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Item } from "../components/Item";
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/UseFetch";
 
 const ItemDetail = () => {
   const { id } = useParams();
   const BASE_URL = `http://localhost:3000/products/${id}`;
-  const [product, setProduct] = useState<Item>();
-  const [error, setError] = useState<any>();
-  const [loading, setLoading] = useState(false);
+  // const [product, setProduct] = useState<Item>();
+  // const [error, setError] = useState<any>();
+  // const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await fetch(BASE_URL);
-        const data = await res.json();
-        setProduct(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const {error, loading, product} = useFetch(BASE_URL);
 
   return (
     <>
@@ -36,7 +23,7 @@ const ItemDetail = () => {
         </div>
       ) : (
         <div>
-          {product && (
+          {product && !Array.isArray(product) &&(
             <div key={product.id} className="item-card">
               <h3 className="item-name">{product.name}</h3>
               <span className="item-price">
