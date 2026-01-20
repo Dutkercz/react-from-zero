@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { Item } from "../components/Item";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/UseFetch";
 
 const ItemDetail = () => {
   const { id } = useParams();
-  const BASE_URL = `http://localhost:3000/products/${id}`;
-  // const [product, setProduct] = useState<Item>();
-  // const [error, setError] = useState<any>();
-  // const [loading, setLoading] = useState(false);
+  const BASE_URL = `http://localhost:3000/products`;
 
-  const {error, loading, product} = useFetch(BASE_URL);
+  const {error, loading, product} = useFetch(BASE_URL, id);
 
   return (
     <>

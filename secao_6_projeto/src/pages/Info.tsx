@@ -1,29 +1,12 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { Item } from "../components/Item";
-import axios from "axios";
+import useFetch from "../hooks/UseFetch";
 
 const Info = () => {
-  const { id } = useParams();
-  const BASE_URL = `http://localhost:3000/products/${id}`;
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<any>();
-  const [product, setProduct] = useState<Item>();
+  const { id } = useParams<{id : string}>();
+  const BASE_URL = `http://localhost:3000/products`;
+ 
 
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(BASE_URL);
-        setProduct(response.data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, [id]);
+  const {error, loading, product} = useFetch(BASE_URL, id);
 
   return (
     <div>
@@ -36,7 +19,7 @@ const Info = () => {
         </div>
       ) : (
         <div>
-          {product && (
+          {product && !Array.isArray(product) &&(
             <div key={product.id} className="item-card">
               <h2 className="item-name">{product.name}</h2>
               {product.info && (
